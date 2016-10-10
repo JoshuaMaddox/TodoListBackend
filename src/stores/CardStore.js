@@ -23,7 +23,7 @@ class CardStore extends EventEmitter {
   }
 
   stopListening(cb){
-    this.removeListener('CHANGE', cb)
+    this.on('CHANGE', cb)
   }
 
   getAllFlashCards(){

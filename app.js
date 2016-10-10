@@ -27,16 +27,6 @@ app.use(webpackDevMiddleware(compiler, {
 }))
 app.use(webpackHotMiddleware(compiler))
 
-//Get a list of all Todos by completion status
-// app.get('/todos', (req, res) => {
-//   todoHandlers.getAllToDos((err, allToDos) => {
-//     if(err) {
-//       return res.status(400).send(err)
-//     }
-//     res.send(allToDos)
-//   })
-// })
-
 
 //Get a list of all Todos
 app.get('/todos', (req, res) => {
@@ -75,7 +65,7 @@ app.delete('/todos/complete', (req, res) => {
   })
 })
 
-//Delete a todo 
+//Delete a single todo 
 app.delete('/todos/:id', (req, res) => {
   let deleteID = req.params.id
   todoHandlers.deleteToDo(deleteID, (err) => {

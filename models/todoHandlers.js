@@ -16,26 +16,11 @@ exports.getAllToDos = function(cb){
   })
 }
 
-
 //Write whatever is fed in to JSON
 exports.write = function(newData, cb) {
   let json = JSON.stringify(newData)
   fs.writeFile(todos, json, cb)
 }
-
-//Get all Todos and filter results
-// exports.getAndFilterTodos = function(completionStatus) {
-//   exports.getAllToDos((err, allToDos) => {
-//     let filterdToDos = allToDos.filter((todo) => {
-//       if(completionStatus === todo.status){
-//         return todo
-//       } else {
-//         return
-//       }
-//     })
-//     cb(null, filterdToDos)
-//   })
-// }
 
 //Get All todos and also filter results if requested
 exports.getAndFilterTodos = function(completionStatus, cb) {
@@ -118,12 +103,3 @@ exports.deleteCompleted = function(cb) {
   cb(remainingToDos)
   })
 }
-
-
-
-
-
-///DUMPING GROUND-------------------
-
-
-
